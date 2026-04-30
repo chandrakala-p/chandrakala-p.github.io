@@ -6,12 +6,10 @@ on:
   pull_request:
     branches: [main]
 
-# Allow only one concurrent deployment; cancel any in-progress runs for the same branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-# Required at workflow level for OIDC-based GitHub Pages deployment
 permissions:
   contents: read
   pages: write
@@ -63,6 +61,8 @@ jobs:
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true   # auto-enables Pages if not already on
 
       - name: Build Next.js static export
         run: npm run build
@@ -70,7 +70,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /chandrakala-portfolio
           NODE_ENV: production
 
-      - name: Disable Jekyll (fixes _next asset 404s)
+      - name: Disable Jekyll (fixes _next/ asset 404s)
         run: touch ./out/.nojekyll
 
       - name: Upload Pages artifact
