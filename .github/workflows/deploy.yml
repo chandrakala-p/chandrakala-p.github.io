@@ -65,7 +65,7 @@ jobs:
       - name: Build Next.js static export
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /chandrakala-portfolio
+          NEXT_PUBLIC_BASE_PATH: ""
           NODE_ENV: production
 
       - name: Disable Jekyll
