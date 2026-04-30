@@ -11,10 +11,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Required at workflow level for OIDC-based GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   # ── Job 1: Quality Gates ──────────────────────────────────────────────────
   quality:
-    name: 🔍 Quality Checks
+    name: Quality Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -38,9 +44,9 @@ jobs:
 
   # ── Job 2: Build ──────────────────────────────────────────────────────────
   build:
-    name: 🏗️ Build
+    name: Build
     runs-on: ubuntu-latest
-    needs: quality                  # Only runs if quality checks pass
+    needs: quality
 
     steps:
       - name: Checkout code
@@ -64,22 +70,20 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /chandrakala-portfolio
           NODE_ENV: production
 
+      - name: Disable Jekyll (fixes _next asset 404s)
+        run: touch ./out/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out                 # Next.js static export output directory
+          path: ./out
 
   # ── Job 3: Deploy ─────────────────────────────────────────────────────────
   deploy:
-    name: 🚀 Deploy to GitHub Pages
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     needs: build
-    # Only deploy on pushes to main — not on PRs
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
