@@ -11,6 +11,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Required for GitHub Pages deployment via GitHub Actions
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   # ── Job 1: Quality Gates ──────────────────────────────────────────────────
   quality:
@@ -64,6 +70,10 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /chandrakala-portfolio
           NODE_ENV: production
 
+      # Critical: prevents Jekyll from ignoring _next/ folder (JS/CSS assets)
+      - name: Add .nojekyll
+        run: touch ./out/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -76,10 +86,6 @@ jobs:
     needs: build
     # Only deploy on pushes to main — not on PRs
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
