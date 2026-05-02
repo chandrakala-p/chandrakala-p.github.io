@@ -6,9 +6,9 @@ export const personal: PersonalInfo = {
   title: 'Senior Backend Engineer',
   company: 'GlobalLogic',
   tagline: 'Scalable Systems. Consultative Clarity. Real Impact.',
-  bio: 'Senior Backend Engineer with 4+ years building distributed, cloud-native systems at scale — now channelling deep technical expertise into client-facing, solutions-oriented roles. I translate complex architectures into clear business narratives.',
+  bio: 'Senior Backend Engineer with 4+ years building high-scale, production-ready systems across web platforms, enterprise SaaS, and mobile application backends — with hands-on exposure across the full stack from database to deployment.',
   extendedBio:
-    'My journey spans high-volume e-commerce platforms, enterprise collaboration tools, and AI-integrated microservices — always with an eye on not just how systems are built, but why they matter to the business. I\'ve collaborated closely with product managers, frontend engineers, and stakeholders to define API contracts, drive architectural decisions, and ship systems that perform at scale. That cross-functional mindset is what draws me towards Solutions Engineering — where technical depth and consultative communication create the most value.',
+    'My work spans high-volume e-commerce, enterprise collaboration tools, AI-integrated microservices, and personalised content platforms for mobile — always shipping systems that perform under real production load. I\'ve contributed across the full stack: defining API contracts with frontend teams, designing database schemas, architecting cloud infrastructure on AWS, and building the backend services that tie it all together. That breadth is what lets me move fast, communicate clearly across teams, and deliver systems that hold up when it matters.',
   email: 'chandrakalapr11@gmail.com',
   linkedin: 'https://www.linkedin.com/in/chandrakalap/',
   github: 'https://github.com/chandrakala-p',

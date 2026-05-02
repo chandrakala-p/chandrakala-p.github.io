@@ -1,32 +1,32 @@
 'use client';
 
-import { Code2, MapPin, Briefcase, Award } from 'lucide-react';
+import { Code2, Globe, MapPin, Award } from 'lucide-react';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { AnimatedSection, StaggerContainer } from '@/components/common/AnimatedSection';
 import { personal } from '@/data/personal';
 
 const highlights = [
-  { icon: Code2,     text: 'Senior Backend Engineer — Node.js, NestJS, AWS' },
-  { icon: MapPin,    text: 'Bangalore, India · Open to remote & global roles' },
-  { icon: Briefcase, text: 'Targeting Solutions Engineering & client-facing roles' },
-  { icon: Award,     text: 'Best Performer — HCL Technologies · B.E. CGPA 8.9' },
+  { icon: Code2,  text: 'Senior Backend Engineer — Node.js, NestJS, TypeScript, AWS' },
+  { icon: Globe,  text: 'Full-Stack Experience — Web Platforms, Mobile App Backends, Enterprise SaaS' },
+  { icon: MapPin, text: 'Bangalore, India · Open to remote & global opportunities' },
+  { icon: Award,  text: 'Best Performer Award — HCL Technologies · B.E. CGPA 8.9' },
 ];
 
 const whatIDo = [
   {
-    title: 'Build Systems That Scale',
+    title: 'Full-Stack Delivery, Backend-First',
     description:
-      'From high-volume e-commerce platforms to enterprise SaaS, I design modular, cloud-native backends on AWS that handle real production workloads — reliably, efficiently, and maintainably.',
+      'From REST APIs and database design to AWS infrastructure and mobile app backends — I work across the full stack with a backend-first mindset, ensuring every layer is built for reliability and scale.',
   },
   {
-    title: 'Define APIs That Connect Teams',
+    title: 'API-First Engineering',
     description:
-      'I work closely with product managers, frontend engineers, and stakeholders to negotiate API contracts before a single line of code is written — eliminating integration friction and keeping everyone aligned.',
+      'I define API contracts with product and frontend teams before a line of code is written, eliminating integration friction and keeping cross-functional delivery on track.',
   },
   {
-    title: 'Translate Technology Into Business Value',
+    title: 'Systems That Scale With the Business',
     description:
-      'Complex distributed systems, caching strategies, and access control frameworks don\'t mean much unless they solve a business problem. I\'ve learned to bridge that gap, and it\'s what makes me a natural fit for Solutions Engineering.',
+      'Whether it\'s handling peak e-commerce traffic, serving personalised content to mobile users, or securing a multi-tenant enterprise platform — I build systems that grow with the business, not against it.',
   },
 ];
 
@@ -39,12 +39,13 @@ export function About() {
             label="About Me"
             title={
               <>
-                Engineering Depth.{' '}
+                Built Across the Stack.{' '}
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
-                  Consulting Mindset.
+                  Shipped at Scale.
                 </span>
               </>
             }
+            subtitle="4+ years engineering high-scale backends for web, mobile, and enterprise — with full-stack exposure across every layer of delivery."
           />
         </AnimatedSection>
 

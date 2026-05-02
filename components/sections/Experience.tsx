@@ -22,7 +22,7 @@ export function Experience() {
                 </span>
               </>
             }
-            subtitle="A track record of driving enterprise deals, delivering technical solutions, and building client trust at the intersection of fintech and blockchain."
+            subtitle="4+ years building production systems at scale — from global e-commerce and mobile content platforms to enterprise collaboration SaaS."
           />
         </AnimatedSection>
 
@@ -47,11 +47,6 @@ export function Experience() {
                     >
                       {exp.company.slice(0, 2).toUpperCase()}
                     </div>
-                    {exp.current && (
-                      <span className="mt-2 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest whitespace-nowrap">
-                        Current
-                      </span>
-                    )}
                   </div>
 
                   {/* Card */}
