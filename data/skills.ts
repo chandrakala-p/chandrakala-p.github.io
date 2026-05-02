@@ -14,6 +14,8 @@ export const skillCategories: SkillCategory[] = [
       'REST API Design',
       'Microservices',
       'Functional Programming',
+      'Auth0 / Okta / RBAC',
+      'Postman / Swagger',
     ],
   },
   {
@@ -34,7 +36,7 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'data',
     title: 'Databases & Caching',
-    icon: 'Layers',
+    icon: 'Database',
     skills: [
       'MongoDB',
       'PostgreSQL',
@@ -48,16 +50,14 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: 'consulting',
-    title: 'Solutions & Consulting',
+    title: 'Architecture & Collaboration',
     icon: 'Briefcase',
     skills: [
       'API Contract Design',
+      'System Architecture Review',
       'Stakeholder Communication',
       'Cross-functional Collaboration',
       'Technical Documentation',
-      'System Architecture Review',
-      'Auth0 / Okta / RBAC',
-      'Postman / Swagger',
       'Jira / Confluence',
     ],
   },

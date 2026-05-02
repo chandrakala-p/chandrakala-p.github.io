@@ -29,7 +29,7 @@ export const projects: Project[] = [
     type: 'Microservices',
     techStack: ['Node.js', 'AWS Lambda', 'AWS Personalize', 'DynamoDB', 'MongoDB', 'Docker', 'S3'],
     impact: 'Enabled personalised content delivery at scale with independently deployable service modules',
-    featured: true,
+    featured: false,
   },
   {
     id: 'fullstack-ecommerce',
